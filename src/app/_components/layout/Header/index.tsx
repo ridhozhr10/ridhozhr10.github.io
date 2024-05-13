@@ -7,8 +7,9 @@ import style from "./style.module.scss";
 
 const menuList = [
   { label: "About", href: "/about" },
-  { label: "Posts", href: "/posts" },
   { label: "CV", href: "/cv" },
+  { label: "Projects", href: "/projects" },
+  { label: "Posts", href: "/posts" },
 ];
 
 const Logo = ({ text }: { text?: string }) => (
