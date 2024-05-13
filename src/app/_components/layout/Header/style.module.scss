@@ -22,14 +22,14 @@
 }
 
 .navigation {
-  @apply flex font-normal flex-row items-center max-sm:flex-row-reverse;
+  @apply flex font-normal flex-row items-center max-md:flex-row-reverse;
 
   a {
     @apply no-underline hover:underline;
   }
 
   & #menu {
-    @apply max-sm:hidden bg-header-bg-dark;
+    @apply max-md:hidden bg-header-bg-dark;
 
     & ul {
       @apply flex items-center justify-start max-w-full mx-auto px-[15px] list-none text-[16px] tracking-[0.96px];
@@ -41,7 +41,7 @@
   }
 
   & #menuMobile {
-    @apply sm:hidden absolute top-16 right-0 p-2 border-none bg-header-bg-dark;
+    @apply md:hidden absolute top-16 right-0 p-2 border-none bg-header-bg-dark;
 
     & ul {
       @apply flex flex-col items-start list-none text-base;
@@ -53,7 +53,7 @@
   }
 
   & #menuTrigger {
-    @apply hidden max-sm:block cursor-pointer;
+    @apply hidden max-md:block cursor-pointer;
 
     & svg {
       @apply text-2xl;
