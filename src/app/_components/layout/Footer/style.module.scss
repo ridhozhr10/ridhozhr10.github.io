@@ -5,11 +5,11 @@
     @apply flex items-center justify-center my-0 mx-auto max-w-full w-[760px];
 
     .content {
-      @apply flex flex-row max-lg:flex-col max-lg:mt-[10px] items-center text-[16px];
+      @apply flex flex-row max-md:flex-col max-md:mt-[10px] items-center text-[16px];
 
       span {
         &:not(:last-child):after {
-          @apply px-[5px] content-['•'] max-lg:content-[''] max-lg:p-0;
+          @apply px-[5px] content-['•'] max-md:content-[''] max-md:p-0;
         }
 
         &:last-child {
