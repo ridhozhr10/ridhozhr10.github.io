@@ -16,7 +16,8 @@ const config: Config = {
         'mono': 'monospace, monospace'
       },
       colors: {
-        'header-bg-dark': "#1b1c1d"
+        'header-bg-dark': "#1b1c1d",
+        'bg-dark': "#232425"
       },
       animation: {
         'cursor': 'cursor 1s infinite'

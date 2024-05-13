@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-a:hover {
+body {
+  @apply bg-bg-dark text-[#a9a9b3] min-h-[100vh] flex flex-col;
+}
+
+.centralize-container {
+  @apply flex flex-grow flex-shrink basis-auto flex-col justify-center;
+}
+
+a {
   @apply underline;
 }

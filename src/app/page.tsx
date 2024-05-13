@@ -1,15 +1,17 @@
-import Header from "@/app/_components/header";
+import Header from "@/app/_components/layout/Header";
+import Footer from "./_components/layout/Footer";
+import BaseLayout from "./_components/layout/BaseLayout";
 
 export const metadata = {
-  title: "> Ridho Azhar"
+  title: "Ridho Azhar"
 }
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <BaseLayout>
+      <main>
+        content
       </main>
-    </>
+    </BaseLayout>
   );
 }

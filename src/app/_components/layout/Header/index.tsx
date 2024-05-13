@@ -13,11 +13,15 @@ const menuList = [
   {label: "Publikationen", href: "/publikationen"},
 ]
 
-const Logo = () => (
+const Logo = ({text}: {text?:string}) => (
   <Link href="/" className={style.logo}>
     <div>
       <span>&gt;</span>
-      <span>$ echo &quot;Hi&quot;</span>
+      {text ? (
+        <span>{text}</span>
+      ) : (
+        <span>$ echo &quot;Hi&quot;</span>
+      )}
       <span className="animate-cursor"></span>
     </div>
   </Link>
@@ -64,10 +68,14 @@ const Navigation = ({menus} : NavigationProps) => {
   )
 }
 
-const Header = () => (
+type HeaderProps = {
+  logoText?: string
+} 
+
+const Header = ({logoText}: HeaderProps) => (
   <header className={style.wrapper}>
     <div id={style.container}>
-      <Logo />
+      <Logo text={logoText} />
       <Navigation menus={menuList}/>
     </div>
   </header>

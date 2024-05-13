@@ -7,7 +7,7 @@
 }
 
 .logo {
-  @apply hover:no-underline;
+  @apply no-underline;
 
   & div {
     @apply font-mono text-lg flex items-center;
@@ -23,6 +23,10 @@
 
 .navigation {
   @apply flex font-normal flex-row items-center max-sm:flex-row-reverse;
+
+  a {
+    @apply no-underline hover:underline;
+  }
   
   & #menu {
     @apply max-sm:hidden bg-header-bg-dark;

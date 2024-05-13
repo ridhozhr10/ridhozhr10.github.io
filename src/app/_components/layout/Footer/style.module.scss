@@ -1,0 +1,26 @@
+.footer {
+  @apply py-[40px] px-[20px] grow-0 text-[#999];
+
+  .inner {
+    @apply flex items-center justify-center my-0 mx-auto max-w-full w-[760px];
+
+    .content {
+      @apply flex flex-row items-center text-[16px];
+
+      span {
+        &:not(:last-child):after {
+          @apply px-[5px];
+          content: "•";
+        }
+
+        &:last-child {
+          @apply p-0;
+        }
+
+        a {
+          @apply underline;
+        }
+      }
+    }
+  }
+}
