@@ -41,7 +41,7 @@
   }
 
   & #menuMobile {
-    @apply md:hidden absolute top-16 right-0 p-2 border-none bg-header-bg-dark;
+    @apply md:hidden absolute top-[50px] right-0 p-2 border-bg-dark border-t-2 border-l-2 bg-header-bg-dark;
 
     & ul {
       @apply flex flex-col items-start list-none text-base;
