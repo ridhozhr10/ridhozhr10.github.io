@@ -1,9 +1,9 @@
 "use client"
 
 import Link from "next/link";
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 import { BiMenu } from "react-icons/bi";
-import style from "./style.module.css";
+import style from "./style.module.scss";
 
 const menuList = [
   {label: "About", href: "/about"},
