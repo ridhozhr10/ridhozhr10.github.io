@@ -1,6 +1,6 @@
-import Link from 'next/link'
-import BaseLayout from './_components/layout/BaseLayout'
- 
+import Link from "next/link";
+import BaseLayout from "./_components/layout/BaseLayout";
+
 export default function NotFound() {
   return (
     <BaseLayout logoText="$ exit code 1.">
@@ -9,5 +9,5 @@ export default function NotFound() {
         <Link href="/">Home</Link>
       </div>
     </BaseLayout>
-  )
+  );
 }

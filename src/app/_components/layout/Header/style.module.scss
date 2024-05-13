@@ -27,13 +27,13 @@
   a {
     @apply no-underline hover:underline;
   }
-  
+
   & #menu {
     @apply max-sm:hidden bg-header-bg-dark;
-    
+
     & ul {
       @apply flex items-center justify-start max-w-full mx-auto px-[15px] list-none text-[16px] tracking-[0.96px];
-    
+
       & li {
         @apply mx-[12px];
       }
