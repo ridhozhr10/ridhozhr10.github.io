@@ -9,7 +9,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   description:
-    "software developer, developing web professionally, like to play and make games",
+    "software developer in general, developing web professionally, like to play and make games, self proclaimed friendly person (trust me)",
 };
 
 export default function RootLayout({
