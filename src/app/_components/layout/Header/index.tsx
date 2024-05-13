@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { BiMenu } from "react-icons/bi";
+import { BiMenu, BiMenuAltRight } from "react-icons/bi";
 import style from "./style.module.scss";
 
 const menuList = [
@@ -61,7 +61,7 @@ const Navigation = ({ menus }: NavigationProps) => {
           setIsOpen((v) => !v);
         }}
       >
-        <BiMenu />
+        {!isOpen ? <BiMenu /> : <BiMenuAltRight />}
       </nav>
     </div>
   );
