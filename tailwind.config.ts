@@ -21,7 +21,7 @@ const config: Config = {
       },
       animation: {
         'cursor': 'cursor 1s infinite',
-        'typing': 'typing 15s infinite'
+        'typing': 'typing 15s steps(20, end) infinite'
       },
       keyframes: {
         cursor: {
