@@ -17,7 +17,17 @@ const Logo = ({ text }: { text?: string }) => (
     <div>
       <span>&gt;</span>
       <span>$</span>
-      {text ? <span>{text}</span> : <span>echo &quot;Hi&quot;</span>}
+      {text ? (
+        <span
+          style={{ animationTimingFunction: `steps(${text.length + 3}, end)` }}
+        >
+          {text}
+        </span>
+      ) : (
+        <span style={{ animationTimingFunction: `steps(12, end)` }}>
+          echo &quot;Hi&quot;
+        </span>
+      )}
       <span className="animate-cursor"></span>
     </div>
   </Link>
