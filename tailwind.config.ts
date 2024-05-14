@@ -20,12 +20,18 @@ const config: Config = {
         'bg-dark': "#232425"
       },
       animation: {
-        'cursor': 'cursor 1s infinite'
+        'cursor': 'cursor 1s infinite',
+        'typing': 'typing 15s steps(25, end) infinite'
       },
       keyframes: {
         cursor: {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0' },
+        },
+        typing: {
+          '5%': {width: '0%'},
+          '15%, 90%': {width: '100%'},
+          '100%': {width: '0%'},
         }
       }
     }

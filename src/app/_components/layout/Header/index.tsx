@@ -16,7 +16,8 @@ const Logo = ({ text }: { text?: string }) => (
   <Link href="/" className={style.logo}>
     <div>
       <span>&gt;</span>
-      {text ? <span>{text}</span> : <span>$ echo &quot;Hi&quot;</span>}
+      <span>$</span>
+      {text ? <span>{text}</span> : <span>echo &quot;Hi&quot;</span>}
       <span className="animate-cursor"></span>
     </div>
   </Link>

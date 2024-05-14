@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function NotFound() {
   return (
-    <BaseLayout logoText="$ exit code 1.">
+    <BaseLayout logoText="exit code 1.">
       <div>
         <h2 className="text-4xl mb-5">Page Not Found</h2>
         <Link href="/">Home</Link>

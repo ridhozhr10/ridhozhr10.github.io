@@ -12,10 +12,14 @@
   & div {
     @apply font-mono text-lg flex items-center;
 
-    & span:nth-child(1) {
+    & span:nth-child(1),
+    & span:nth-child(2) {
       @apply mr-[5px];
     }
     & span:nth-child(3) {
+      @apply animate-typing overflow-hidden whitespace-nowrap tracking-widest w-0;
+    }
+    & span:nth-child(4) {
       @apply inline-block w-2 h-4 bg-red-400 ml-[5px] rounded-[1px];
     }
   }
