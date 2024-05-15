@@ -13,3 +13,7 @@ body {
 a {
   @apply underline;
 }
+
+main.post {
+  @apply w-full max-md:max-w-[600px] max-w-[800px] text-left p-[20px] my-[20px] mx-auto;
+}

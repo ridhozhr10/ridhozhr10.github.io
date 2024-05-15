@@ -1,0 +1,16 @@
+export type Post = {
+  preview?: boolean;
+  path: string[];
+
+  created_at: string;
+  updated_at?: string;
+  
+  title: string;
+  description: string;
+  coverImage: string;
+  ogImage: {
+    url: string;
+  };
+
+  content: string;
+};
