@@ -21,11 +21,7 @@ const Footer = () => (
         <span>
           Powered by{" "}
           <a href="https://nextjs.org/" target="_blank" rel="noopener">
-            NextJS
-          </a>{" "}
-          &{" "}
-          <a href="https://pages.github.com/" target="_blank" rel="noopener">
-            Github Pages
+            Next.js
           </a>
         </span>
         <span>
@@ -36,6 +32,15 @@ const Footer = () => (
             rel="noopener"
           >
             Djordje Atlialp
+          </a>
+        </span>
+        <span>
+          <a
+            href="https://github.com/ridhozhr10/ridhozhr10.github.io"
+            target="_blank"
+            rel="noopener"
+          >
+            source code
           </a>
         </span>
       </div>
