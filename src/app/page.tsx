@@ -12,7 +12,7 @@ export default function Home() {
       <main>
         <div>
           <Image
-            src="/img/smug.png"
+            src="/img/smug-me-export.png"
             width={125}
             height={125}
             alt="current favorite picture"
