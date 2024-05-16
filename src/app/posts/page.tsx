@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function Posts() {
   return (
-    <BaseLayout>
+    <BaseLayout logoText="cd /Documents/posts">
       <main>
         <h1 className="text-5xl">Coming Soon</h1>
       </main>

@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function About() {
   return (
-    <BaseLayout>
+    <BaseLayout logoText="whoami">
       <main>
         <h1 className="text-5xl">Coming Soon</h1>
       </main>

@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function CV() {
   return (
-    <BaseLayout>
+    <BaseLayout logoText="cat ~/Documents/CV.md">
       <main>
         <h1 className="text-5xl">Coming Soon</h1>
       </main>

@@ -18,7 +18,7 @@ export default async function Post({ params }: Props) {
 
   const content = await mdToHtml(post.content);
   return (
-    <BaseLayout>
+    <BaseLayout logoText="cat ./content.txt | less ">
       <main className="post">
         <BlogPost content={content} title={post.title} />
       </main>
