@@ -8,33 +8,32 @@ const config: Config = {
   ],
   theme: {
     container: {
-      center: true
+      center: true,
     },
-    extend:{
+    extend: {
       fontFamily: {
-        'sans': 'Inter, -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", Helvetica, Arial, sans-serif',
-        'mono': 'monospace, monospace'
+        mono: "monospace, monospace",
       },
       colors: {
-        'header-bg-dark': "#1b1c1d",
-        'bg-dark': "#232425"
+        "header-bg-dark": "#1b1c1d",
+        "bg-dark": "#232425",
       },
       animation: {
-        'cursor': 'cursor 1s infinite',
-        'typing': 'typing 15s steps(20, end) infinite'
+        cursor: "cursor 1s infinite",
+        typing: "typing 15s steps(20, end) infinite",
       },
       keyframes: {
         cursor: {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0' },
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0" },
         },
         typing: {
-          '5%': {width: '0%'},
-          '15%, 90%': {width: '100%'},
-          '100%': {width: '0%'},
-        }
-      }
-    }
+          "5%": { width: "0%" },
+          "15%, 90%": { width: "100%" },
+          "100%": { width: "0%" },
+        },
+      },
+    },
   },
   plugins: [],
 };
