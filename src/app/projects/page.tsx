@@ -8,7 +8,7 @@ export default function Project() {
   return (
     <BaseLayout>
       <main>
-        <h1 className="text-5xl">Coming Soon</h1>
+        <h1 className="text-5xl">ls ~/Workspaces</h1>
       </main>
     </BaseLayout>
   );
