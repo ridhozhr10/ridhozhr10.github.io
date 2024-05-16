@@ -6,9 +6,9 @@ export const metadata = {
 
 export default function Project() {
   return (
-    <BaseLayout>
+    <BaseLayout logoText="ls ~/Workspaces">
       <main>
-        <h1 className="text-5xl">ls ~/Workspaces</h1>
+        <h1 className="text-5xl">Coming Soon</h1>
       </main>
     </BaseLayout>
   );

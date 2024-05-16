@@ -17,7 +17,7 @@ const Logo = ({ text }: { text?: string }) => (
     <div>
       <span>&gt;</span>
       <span>$</span>
-      {text ? (
+      {text !== undefined ? (
         <span
           style={{ animationTimingFunction: `steps(${text.length + 3}, end)` }}
         >

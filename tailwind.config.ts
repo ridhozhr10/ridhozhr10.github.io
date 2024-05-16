@@ -12,7 +12,17 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        mono: "monospace, monospace",
+        mono: ["monospace", "monospace"],
+        sans: [
+          "var(--font-inter)",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Roboto",
+          "Segoe UI",
+          "Helvetica",
+          "Arial",
+          "sans-serif",
+        ],
       },
       colors: {
         "header-bg-dark": "#1b1c1d",

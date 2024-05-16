@@ -3,7 +3,7 @@ import BaseLayout from "./_components/layout/BaseLayout";
 
 export default function Loading() {
   return (
-    <BaseLayout>
+    <BaseLayout logoText="">
       <BiLoader className="animate-spin" />
     </BaseLayout>
   );
