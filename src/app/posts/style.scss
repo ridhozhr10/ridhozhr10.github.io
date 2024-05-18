@@ -1,0 +1,31 @@
+.posts-group {
+  @apply flex mb-10 tracking-[0.96px] leading-[0.96] max-md:block;
+
+  .post-year {
+    @apply pt-[1.1rem] mr-12 opacity-60 text-2xl max-md:mt-[-6px];
+  }
+
+  .posts-list {
+    @apply grow m-0 p-0;
+
+    a {
+      @apply border-none no-underline;
+    }
+
+    .post-item {
+      border-bottom: 1px grey dashed;
+
+      .post-item-inner {
+        @apply flex justify-between align-baseline py-[12px] px-0;
+
+        .post-title {
+          @apply mb-[5px];
+        }
+
+        .post-day {
+          @apply shrink-0 ml-[1em] opacity-60;
+        }
+      }
+    }
+  }
+}

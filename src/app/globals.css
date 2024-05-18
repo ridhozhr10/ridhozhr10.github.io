@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  @apply scroll-smooth;
+}
+
 body {
   @apply bg-bg-dark text-[#a9a9b3] min-h-[100vh] flex flex-col;
 }

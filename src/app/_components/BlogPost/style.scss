@@ -1,0 +1,28 @@
+.post-info {
+  p {
+    margin: 0.8em 0;
+  }
+
+  a:hover {
+    border-bottom: 1px solid white;
+  }
+
+  svg {
+    margin-right: 0.8em;
+  }
+
+  .tag {
+    margin-right: 0.5em;
+
+    &::before {
+      content: "#";
+    }
+  }
+
+  .feather {
+    display: inline-block;
+    vertical-align: -0.125em;
+    width: 1em;
+    height: 1em;
+  }
+}

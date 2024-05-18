@@ -4,7 +4,7 @@
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   margin: 0;
-  color: #e6edf3;
+  color: #a9a9b3;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 16px;
@@ -49,8 +49,8 @@
 
 .markdown-body a {
   background-color: transparent;
-  color: #2f81f7;
-  text-decoration: none;
+  color: #a9a9b3;
+  text-decoration: underline;
 }
 
 .markdown-body abbr[title] {
@@ -78,7 +78,7 @@
 
 .markdown-body mark {
   background-color: rgba(187, 128, 9, 0.15);
-  color: #e6edf3;
+  color: #a9a9b3;
 }
 
 .markdown-body small {
@@ -105,7 +105,7 @@
   border-style: none;
   max-width: 100%;
   box-sizing: content-box;
-  background-color: #0d1117;
+  background-color: #1b1c1d;
 }
 
 .markdown-body code,
@@ -124,11 +124,10 @@
   box-sizing: content-box;
   overflow: hidden;
   background: transparent;
-  border-bottom: 1px solid #21262d;
-  height: 0.25em;
+  height: 2px;
   padding: 0;
   margin: 24px 0;
-  background-color: #30363d;
+  background-color: #4e4e57;
   border: 0;
 }
 
@@ -258,9 +257,9 @@
   font: 11px ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
     Liberation Mono, monospace;
   line-height: 10px;
-  color: #e6edf3;
+  color: #a9a9b3;
   vertical-align: middle;
-  background-color: #161b22;
+  background-color: #1b1c1d;
   border: solid 1px rgba(110, 118, 129, 0.4);
   border-bottom-color: rgba(110, 118, 129, 0.4);
   border-radius: 6px;
@@ -315,7 +314,7 @@
 .markdown-body blockquote {
   margin: 0;
   padding: 0 1em;
-  color: #848d97;
+  color: #b2becd;
   border-left: 0.25em solid #30363d;
 }
 
@@ -442,7 +441,7 @@
 .markdown-body h4 .octicon-link,
 .markdown-body h5 .octicon-link,
 .markdown-body h6 .octicon-link {
-  color: #e6edf3;
+  color: #a9a9b3;
   vertical-align: middle;
   visibility: hidden;
 }
@@ -590,12 +589,12 @@
 }
 
 .markdown-body table tr {
-  background-color: #0d1117;
+  background-color: #1b1c1d;
   border-top: 1px solid #21262d;
 }
 
 .markdown-body table tr:nth-child(2n) {
-  background-color: #161b22;
+  background-color: #232425;
 }
 
 .markdown-body table img {
@@ -640,7 +639,7 @@
   display: block;
   padding: 5px 0 0;
   clear: both;
-  color: #e6edf3;
+  color: #a9a9b3;
 }
 
 .markdown-body span.align-center {
@@ -755,8 +754,8 @@
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
-  color: #e6edf3;
-  background-color: #161b22;
+  color: #a9a9b3;
+  background-color: #1b1c1d;
   border-radius: 6px;
 }
 
@@ -786,7 +785,7 @@
 .markdown-body .csv-data .blob-num {
   padding: 10px 8px 9px;
   text-align: right;
-  background: #0d1117;
+  background: #1b1c1d;
   border: 0;
 }
 
@@ -796,7 +795,7 @@
 
 .markdown-body .csv-data th {
   font-weight: 600;
-  background: #161b22;
+  background: #1b1c1d;
   border-top: 0;
 }
 
@@ -841,7 +840,7 @@
 }
 
 .markdown-body .footnotes li:target {
-  color: #e6edf3;
+  color: #a9a9b3;
 }
 
 .markdown-body .footnotes .data-footnote-backref g-emoji {
