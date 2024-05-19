@@ -1,3 +1,4 @@
+import { baseURL } from "@/constants";
 import style from "./style.module.scss";
 
 const Footer = () => (
@@ -6,7 +7,7 @@ const Footer = () => (
       <div className={style.content}>
         <span>© 2024</span>
         <span>
-          <a href="https://ridhozhr10.github.io/">Ridho Azhar</a>
+          <a href={baseURL}>Ridho Azhar</a>
         </span>
         <span>
           Inspired by{" "}

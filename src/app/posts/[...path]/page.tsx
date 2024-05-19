@@ -1,5 +1,6 @@
 import BlogPost from "@/app/_components/BlogPost";
 import BaseLayout from "@/app/_components/layout/BaseLayout";
+import { baseURL } from "@/constants";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
 import mdToHtml from "@/lib/markdown";
 import { Metadata } from "next";
@@ -20,7 +21,7 @@ export default async function Post({ params }: Props) {
   return (
     <BaseLayout logoText="cat ./content.txt | less ">
       <main className="post">
-        <BlogPost content={content} title={post.title} />
+        <BlogPost {...post} content={content} />
       </main>
     </BaseLayout>
   );
@@ -37,9 +38,17 @@ export function generateMetadata({ params }: Props): Metadata {
 
   return {
     title,
+    description: post.description,
+    robots: { follow: true, index: true },
     openGraph: {
       title,
+      url: `${baseURL}/posts/${post.path.join("/")}`,
+      description: post.description,
       images: [post.ogImage.url],
+      type: "article",
+      authors: "ridhozhr10.github.io",
+      publishedTime: post.created_at,
+      modifiedTime: post.updated_at,
     },
   };
 }

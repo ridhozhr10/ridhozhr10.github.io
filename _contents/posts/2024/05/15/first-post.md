@@ -6,7 +6,7 @@ title: "Preview Mode for Static Generation"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 coverImage: "/assets/blog/preview/cover.jpg"
 ogImage:
-  url: "/assets/blog/preview/cover.jpg"
+  url: "/img/smug-me-export.png"
 ---
 
 ### Table Of Contents
