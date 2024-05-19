@@ -87,8 +87,6 @@ export default function BlogPost({ content, ...post }: BlogPostProps) {
       <div className="post-info">
         <p></p>
       </div>
-
-      <div id="pagination" className="h-[1000px]"></div>
     </>
   );
 }
