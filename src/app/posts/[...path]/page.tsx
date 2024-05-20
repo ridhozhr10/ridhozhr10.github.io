@@ -1,7 +1,7 @@
 import BlogPost from "@/app/_components/BlogPost";
 import BaseLayout from "@/app/_components/layout/BaseLayout";
 import { baseURL } from "@/constants";
-import { getAllPosts, getPostBySlug } from "@/lib/api";
+import { getAllPosts, getNextPreviousPost, getPostBySlug } from "@/lib/api";
 import mdToHtml from "@/lib/markdown";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -12,7 +12,7 @@ type Props = {
 
 export default async function Post({ params }: Props) {
   const post = getPostBySlug(params.path.join("/"));
-
+  const pagination = getNextPreviousPost(post);
   if (!post) {
     return notFound();
   }
@@ -21,7 +21,7 @@ export default async function Post({ params }: Props) {
   return (
     <BaseLayout logoText="cat ./content.txt | less ">
       <main className="post">
-        <BlogPost {...post} content={content} />
+        <BlogPost {...post} content={content} pagination={pagination} />
       </main>
     </BaseLayout>
   );

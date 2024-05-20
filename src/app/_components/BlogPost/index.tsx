@@ -5,11 +5,11 @@ import "./markdown.css";
 import "./style.scss";
 import "highlight.js/styles/monokai.css";
 import {
-  BiCross,
-  BiLogoFacebook,
+  BiLeftArrow,
   BiLogoFacebookSquare,
   BiLogoLinkedinSquare,
   BiLogoTwitter,
+  BiRightArrow,
   BiShare,
   BiX,
 } from "react-icons/bi";
@@ -20,12 +20,18 @@ import {
 } from "@/lib/share";
 import { Post } from "@/interfaces/post";
 import { useState } from "react";
+import { SinglePagination } from "@/lib/api";
 
 export type BlogPostProps = Post & {
   content: string;
+  pagination: SinglePagination;
 };
 
-export default function BlogPost({ content, ...post }: BlogPostProps) {
+export default function BlogPost({
+  content,
+  pagination,
+  ...post
+}: BlogPostProps) {
   const shareLinks = [
     {
       href: generateLinkedInShare({ content, ...post }),
@@ -86,6 +92,35 @@ export default function BlogPost({ content, ...post }: BlogPostProps) {
       </article>
       <div className="post-info">
         <p></p>
+      </div>
+
+      <div className="flex gap-3 items-center justify-center">
+        {pagination.prev && (
+          <div className="bg-header-bg-dark bg-opacity-80 max-w-[40%] rounded-md hover:underline">
+            <Link
+              href={`/posts/${pagination.prev.path.join("/")}`}
+              className="flex px-[16px] py-[8px] no-underline text-ellipsis text-nowrap overflow-hidden justify-center items-center"
+            >
+              <BiLeftArrow className="mr-2 text-3xl" />
+              <span className="text-ellipsis overflow-hidden text-nowrap">
+                {pagination.prev.title}
+              </span>
+            </Link>
+          </div>
+        )}
+        {pagination.next && (
+          <div className="bg-header-bg-dark bg-opacity-80 max-w-[40%] rounded-md hover:underline">
+            <Link
+              href={`/posts/${pagination.next.path.join("/")}`}
+              className="flex px-[16px] py-[8px] no-underline text-ellipsis text-nowrap overflow-hidden justify-center items-center"
+            >
+              <span className="text-ellipsis overflow-hidden text-nowrap">
+                {pagination.next.title}
+              </span>
+              <BiRightArrow className="mr-2 text-3xl" />
+            </Link>
+          </div>
+        )}
       </div>
     </>
   );

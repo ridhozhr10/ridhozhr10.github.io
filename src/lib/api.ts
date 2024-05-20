@@ -34,6 +34,26 @@ export function getPostBySlug(slug: string): Post {
   } as Post;
 }
 
+export type SinglePagination = { prev?: Post; next?: Post };
+
+export function getNextPreviousPost(post: Post): SinglePagination {
+  const result: SinglePagination = {};
+
+  const allPost = getAllPosts();
+  const idxCurrent = allPost
+    .map((d) => d.path.join("/"))
+    .findIndex((d) => d === post.path.join("/"));
+
+  if (allPost[idxCurrent - 1]) {
+    result.prev = allPost[idxCurrent - 1];
+  }
+  if (allPost[idxCurrent + 1]) {
+    result.next = allPost[idxCurrent + 1];
+  }
+
+  return result;
+}
+
 export function getAllPosts(): Post[] {
   const slugs = getPostSlugs();
   const posts = slugs

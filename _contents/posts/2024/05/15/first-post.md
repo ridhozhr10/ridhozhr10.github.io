@@ -2,7 +2,7 @@
 preview: true
 created_at: "2024-05-15T13:33:27+00:00"
 updated_at: "-"
-title: "Preview Mode for Static Generation"
+title: "Preview Mode for Static Generation 2"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 coverImage: "/assets/blog/preview/cover.jpg"
 ogImage:
