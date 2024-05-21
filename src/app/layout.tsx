@@ -43,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans`}>
-        <NextTopLoader color="#a9a9b3" />
+        <NextTopLoader color="#a9a9b3" showSpinner={false} />
         {children}
       </body>
     </html>
