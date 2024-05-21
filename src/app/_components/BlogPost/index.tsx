@@ -19,8 +19,9 @@ import {
   generateTwitterShare,
 } from "@/lib/share";
 import { Post } from "@/interfaces/post";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { SinglePagination } from "@/lib/api";
+import Comment from "./Comment";
 
 export type BlogPostProps = Post & {
   content: string;
@@ -51,6 +52,8 @@ export default function BlogPost({
   ];
 
   const [shareOpen, setShareOpen] = useState(false);
+
+  const commentWrapperRef = useRef<HTMLDivElement>(null);
 
   return (
     <>
@@ -93,8 +96,10 @@ export default function BlogPost({
       <div className="post-info">
         <p></p>
       </div>
-
-      <div className="flex gap-3 items-center justify-center">
+      <div ref={commentWrapperRef}>
+        <Comment parentRef={commentWrapperRef} />
+      </div>
+      <div id="pagination" className="flex gap-3 items-center justify-center">
         {pagination.prev && (
           <div className="bg-header-bg-dark bg-opacity-80 max-w-[40%] rounded-md hover:underline">
             <Link
