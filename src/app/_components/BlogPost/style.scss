@@ -43,7 +43,7 @@
 
   span {
     margin-right: 0.5em;
-    .tag {
+    &.tag {
       &::before {
         content: "#";
       }

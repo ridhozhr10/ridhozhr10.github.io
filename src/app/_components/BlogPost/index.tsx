@@ -8,6 +8,7 @@ import "highlight.js/styles/monokai.css";
 import {
   BiArrowBack,
   BiCalendar,
+  BiFolder,
   BiLogoFacebookSquare,
   BiLogoLinkedinSquare,
   BiLogoTwitter,
@@ -120,6 +121,20 @@ export default function BlogPost({
             ))}
           </p>
         )}
+        <p>
+          <BiFolder className="feather" />
+          <span>
+            {post.path.map((p, i) => {
+              const slug = post.path.filter((_, is) => is <= i).join("/");
+              return (
+                <>
+                  <Link href={`/posts/${slug}`}>{p}</Link>
+                  {i < post.path.length - 1 ? "/" : ""}
+                </>
+              );
+            })}
+          </span>
+        </p>
         <p>
           <BiCalendar className="feather" />
           <span>{dayjs(post.created_at).format("YYYY-MM-DD HH:mm")}</span>
