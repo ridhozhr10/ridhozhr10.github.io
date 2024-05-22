@@ -12,7 +12,7 @@ import {
   BiLogoLinkedinSquare,
   BiLogoTwitter,
   BiShare,
-  BiTag,
+  BiTagAlt,
   BiX,
 } from "react-icons/bi";
 import {
@@ -112,7 +112,7 @@ export default function BlogPost({
       <div className="post-info">
         {post.tags.length > 0 && (
           <p>
-            <BiTag className="feather" />
+            <BiTagAlt className="feather" />
             {post.tags.map((tag) => (
               <span className="tag" key={tag}>
                 <Link href={`/tags/${tag}`}>{tag}</Link>

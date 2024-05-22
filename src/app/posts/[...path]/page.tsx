@@ -1,17 +1,57 @@
 import BlogPost from "@/app/_components/BlogPost";
 import BaseLayout from "@/app/_components/layout/BaseLayout";
 import { baseURL } from "@/constants";
-import { getAllPosts, getNextPreviousPost, getPostBySlug } from "@/lib/api";
+import {
+  getNextPreviousPost,
+  getPostAndDirSlugs,
+  getPostOrDirBySlug,
+} from "@/lib/api";
 import mdToHtml from "@/lib/markdown";
+import dayjs from "dayjs";
 import { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
+import "@/app/posts/style.scss";
 
 type Props = {
-  params: { path: string[]; realPath: string };
+  params: { path: string[] };
 };
 
 export default async function Post({ params }: Props) {
-  const post = getPostBySlug(params.path.join("/"));
+  const data = getPostOrDirBySlug(params.path.join("/"));
+  if (data.type === "dir") {
+    if (data.dir.length < 0) {
+      return notFound();
+    }
+    return (
+      <BaseLayout logoText={`ls -h $POSTS_DIR/${params.path.join("/")}`}>
+        <main className="post">
+          <h1 className="text-5xl font-bold my-6">
+            Posts on {params.path.join("/")}
+          </h1>
+          <div className="posts-group">
+            <ul className="posts-list">
+              {data.dir.map((post) => (
+                <li key={post.path.join("/")} className="post-item">
+                  <Link
+                    href={`/posts/${post.path.join("/")}`}
+                    className="post-item-inner"
+                  >
+                    <span className="post-title">{post.title}</span>
+                    <span className="post-day">
+                      {dayjs(post.created_at).format("MMM DD, YYYY")}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </main>
+      </BaseLayout>
+    );
+  }
+
+  const { post } = data;
   const pagination = getNextPreviousPost(post);
   if (!post) {
     return notFound();
@@ -28,14 +68,24 @@ export default async function Post({ params }: Props) {
 }
 
 export function generateMetadata({ params }: Props): Metadata {
-  const post = getPostBySlug(params.path.join("/"));
-
-  if (!post) {
+  const data = getPostOrDirBySlug(params.path.join("/"));
+  if (!data) {
     return notFound();
   }
+  if (data.type === "dir") {
+    if (data.dir.length < 0) {
+      return notFound();
+    }
+    return {
+      title: `${params.path.join("/")} Posts :: Ridho Azhar`,
+    };
+  }
 
+  if (!data.post) {
+    return notFound();
+  }
+  const post = data.post;
   const title = `${post.title} :: Ridho Azhar`;
-
   return {
     title,
     description: post.description,
@@ -54,9 +104,11 @@ export function generateMetadata({ params }: Props): Metadata {
 }
 
 export async function generateStaticParams() {
-  const posts = getAllPosts();
+  const slugs = getPostAndDirSlugs();
 
-  return posts.map((post) => ({
-    path: post.path,
-  }));
+  return slugs.map((slug) => {
+    return {
+      path: slug.split("/"),
+    };
+  });
 }
