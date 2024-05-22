@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import Link from "next/link";
@@ -5,12 +6,13 @@ import "./markdown.css";
 import "./style.scss";
 import "highlight.js/styles/monokai.css";
 import {
-  BiLeftArrow,
+  BiArrowBack,
+  BiCalendar,
   BiLogoFacebookSquare,
   BiLogoLinkedinSquare,
   BiLogoTwitter,
-  BiRightArrow,
   BiShare,
+  BiTag,
   BiX,
 } from "react-icons/bi";
 import {
@@ -22,6 +24,7 @@ import { Post } from "@/interfaces/post";
 import { useRef, useState } from "react";
 import { SinglePagination } from "@/lib/api";
 import Comment from "./Comment";
+import dayjs from "dayjs";
 
 export type BlogPostProps = Post & {
   content: string;
@@ -88,16 +91,44 @@ export default function BlogPost({
             {post.title}
           </Link>
         </h1>
+        {post.excerpt && <div className="post-excerpt">{post.excerpt}</div>}
+        {post.coverImage && (
+          <figure className="post-cover">
+            <img src={post.coverImage.src} alt={post.coverImage.alt || ""} />
+            {post.coverImage.caption && (
+              <figcaption>
+                <a href={post.coverImage.caption.url || "#"}>
+                  {post.coverImage.caption.label}
+                </a>
+              </figcaption>
+            )}
+          </figure>
+        )}
         <div
-          className="markdown-body mt-[30px]"
+          className="markdown-body"
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </article>
       <div className="post-info">
-        <p></p>
-      </div>
-      <div ref={commentWrapperRef}>
-        <Comment parentRef={commentWrapperRef} />
+        {post.tags.length > 0 && (
+          <p>
+            <BiTag className="feather" />
+            {post.tags.map((tag) => (
+              <span className="tag" key={tag}>
+                <Link href={`/tags/${tag}`}>{tag}</Link>
+              </span>
+            ))}
+          </p>
+        )}
+        <p>
+          <BiCalendar className="feather" />
+          <span>{dayjs(post.created_at).format("YYYY-MM-DD HH:mm")}</span>
+          {dayjs(post.updated_at).isValid() && (
+            <span>
+              (Updated: {dayjs(post.updated_at).format("YYYY-MM-DD HH:mm")})
+            </span>
+          )}
+        </p>
       </div>
       <div id="pagination" className="flex gap-3 items-center justify-center">
         {pagination.prev && (
@@ -106,7 +137,8 @@ export default function BlogPost({
               href={`/posts/${pagination.prev.path.join("/")}`}
               className="flex px-[16px] py-[8px] no-underline text-ellipsis text-nowrap overflow-hidden justify-center items-center"
             >
-              <BiLeftArrow className="mr-2 text-3xl" />
+              <BiArrowBack className="mr-2 text-xl" />
+
               <span className="text-ellipsis overflow-hidden text-nowrap">
                 {pagination.prev.title}
               </span>
@@ -122,10 +154,13 @@ export default function BlogPost({
               <span className="text-ellipsis overflow-hidden text-nowrap">
                 {pagination.next.title}
               </span>
-              <BiRightArrow className="mr-2 text-3xl" />
+              <BiArrowBack className="ml-2 text-xl rotate-180" />
             </Link>
           </div>
         )}
+      </div>
+      <div ref={commentWrapperRef}>
+        <Comment parentRef={commentWrapperRef} />
       </div>
     </>
   );

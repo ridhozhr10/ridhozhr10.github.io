@@ -1,4 +1,34 @@
+.post-excerpt {
+  color: grey;
+  font-style: italic;
+}
+
+.post-cover {
+  border-radius: 8px;
+  margin: 40px -50px;
+  width: 860px;
+  max-width: 860px;
+  overflow: hidden;
+  @media (max-width: 900px) {
+    & {
+      margin: 20px 0;
+      width: 100%;
+    }
+  }
+
+  figcaption {
+    font-size: 14px;
+    margin-top: 5px;
+    opacity: 0.8;
+    text-align: center;
+  }
+}
+
 .post-info {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  line-height: normal;
+  opacity: 0.6;
   p {
     margin: 0.8em 0;
   }
@@ -11,11 +41,12 @@
     margin-right: 0.8em;
   }
 
-  .tag {
+  span {
     margin-right: 0.5em;
-
-    &::before {
-      content: "#";
+    .tag {
+      &::before {
+        content: "#";
+      }
     }
   }
 

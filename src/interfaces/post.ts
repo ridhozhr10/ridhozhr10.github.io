@@ -4,11 +4,19 @@ export type Post = {
 
   created_at: string;
   updated_at?: string;
+  tags: string[];
 
   title: string;
   description: string;
   excerpt?: string;
-  coverImage?: string;
+  coverImage?: {
+    src: string;
+    alt?: string;
+    caption?: {
+      label: string;
+      url?: string;
+    };
+  };
   ogImage: {
     url: string;
   };
