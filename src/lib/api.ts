@@ -1,9 +1,11 @@
 import { Post } from "@/interfaces/post";
 import { lstatSync, readFileSync, readdirSync } from "fs";
-import { dirname, join, sep } from "path";
+import { join, sep } from "path";
 import matter from "gray-matter";
+import { About } from "@/interfaces/about";
 
 const postsDir = join(process.cwd(), "_contents", "posts");
+const aboutFile = join(process.cwd(), "_contents", "about.md");
 
 export function getPostSlugs(): string[] {
   const readDir = (path: string): string[] | undefined => {
@@ -170,4 +172,14 @@ export function getAllTags(): string[] {
   });
 
   return res;
+}
+
+export function getAboutContent(): About {
+  const fileContents = readFileSync(aboutFile);
+  const { content, data } = matter(fileContents);
+  return {
+    content,
+    description: data.description,
+    title: data.title,
+  };
 }

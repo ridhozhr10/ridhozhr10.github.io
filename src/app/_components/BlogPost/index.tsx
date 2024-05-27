@@ -2,9 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import "./markdown.css";
 import "./style.scss";
-import "highlight.js/styles/monokai.css";
 import {
   BiArrowBack,
   BiCalendar,
@@ -26,6 +24,7 @@ import { useRef, useState } from "react";
 import { SinglePagination } from "@/lib/api";
 import Comment from "./Comment";
 import dayjs from "dayjs";
+import Markdown from "../Markdown";
 
 export type BlogPostProps = Post & {
   content: string;
@@ -105,10 +104,7 @@ export default function BlogPost({
             )}
           </figure>
         )}
-        <div
-          className="markdown-body"
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
+        <Markdown content={content} />
       </article>
       <div className="post-info">
         {post.tags.length > 0 && (
