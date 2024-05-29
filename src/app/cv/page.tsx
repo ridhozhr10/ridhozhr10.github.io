@@ -242,16 +242,22 @@ export default function CV() {
     <BaseLayout logoText="cat ~/Documents/CV.md">
       <main className="post">
         <article className="relative">
-          <div className="absolute right-[-4rem] max-lg:right-0 h-full">
-            <ul className="flex flex-col gap-3 text-3xl sticky top-10 bottom-0 p-2 bg-header-bg-dark rounded-md">
+          <div className="absolute right-[-11rem] max-xl:right-0 h-full">
+            <ul className="flex flex-col gap-3 text-3xl sticky top-16 bottom-0 p-2 bg-header-bg-dark rounded-md">
               <li>
-                <a title="download" href="/docs/CV-ridho_azhar.pdf" download>
-                  <BiDownload />
+                <a
+                  title="Download CV"
+                  href="/docs/CV-ridho_azhar.pdf"
+                  download
+                  className="no-underline flex gap-2 items-center"
+                >
+                  <BiDownload className="inline-block" />
+                  <span className="max-xl:hidden text-base">Download CV</span>
                 </a>
               </li>
             </ul>
           </div>
-          <div className="max-md:hidden grid grid-cols-3 gap-6">
+          <div className="desktop max-md:hidden grid grid-cols-3 gap-6">
             <div>
               <Contact />
               <Skills />
@@ -263,7 +269,7 @@ export default function CV() {
               <WorkExperience />
             </div>
           </div>
-          <div className="grid grid-flow-row gap-6 md:hidden">
+          <div className="mobile grid grid-flow-row gap-6 md:hidden">
             <div>
               <Contact />
               <Profile />
