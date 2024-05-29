@@ -3,10 +3,9 @@ import BaseLayout from "../_components/layout/BaseLayout";
 import Link from "next/link";
 import dayjs from "dayjs";
 import "./style.scss";
+import { baseMetadata } from "@/constants";
 
-export const metadata = {
-  title: "Posts :: Ridho Azhar",
-};
+export const metadata = baseMetadata("posts", "Posts");
 
 export default function Posts() {
   var postGroups = getPostGroupByYear();

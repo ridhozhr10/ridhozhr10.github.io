@@ -1,8 +1,7 @@
+import { baseMetadata, baseURL } from "@/constants";
 import BaseLayout from "../_components/layout/BaseLayout";
 
-export const metadata = {
-  title: "Projects :: Ridho Azhar",
-};
+export const metadata = baseMetadata("projects", "Project");
 
 export default function Project() {
   return (

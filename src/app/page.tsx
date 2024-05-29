@@ -1,10 +1,9 @@
 import Image from "next/image";
 import BaseLayout from "./_components/layout/BaseLayout";
 import { BiEnvelope, BiLogoGithub, BiLogoLinkedinSquare } from "react-icons/bi";
+import { baseMetadata } from "@/constants";
 
-export const metadata = {
-  title: "Ridho Azhar",
-};
+export const metadata = baseMetadata("");
 
 export default function Home() {
   return (
@@ -12,7 +11,7 @@ export default function Home() {
       <main>
         <div>
           <Image
-            src="/img/smug-me-export.png"
+            src="/img/smug-ico.png"
             width={125}
             height={125}
             alt="current favorite picture"
