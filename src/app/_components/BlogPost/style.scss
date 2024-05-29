@@ -9,6 +9,11 @@
   width: 860px;
   max-width: 860px;
   overflow: hidden;
+
+  img {
+    margin: 0 auto;
+  }
+
   @media (max-width: 900px) {
     & {
       margin: 20px 0;
