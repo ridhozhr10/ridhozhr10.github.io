@@ -64,10 +64,15 @@ export function generateMetadata({ params }: Props): Metadata {
     title,
     robots: { follow: true, index: true },
     openGraph: {
-      title: `title`,
+      title,
       url: `/tags/${params.tag}`,
-      images: `/img/smug-ico.png`,
+      images: [`/img/smug-ico.png`],
       type: "website",
+    },
+    twitter: {
+      card: "summary",
+      title,
+      images: [`/img/smug-ico.png`],
     },
   };
 }

@@ -99,6 +99,11 @@ export function generateMetadata({ params }: Props): Metadata {
         images: `/img/smug-ico.png`,
         type: "website",
       },
+      twitter: {
+        card: "summary",
+        title: `${params.path.join("/")} Posts :: Ridho Azhar`,
+        images: [`/img/smug-ico.png`],
+      },
     };
   }
 
@@ -121,6 +126,11 @@ export function generateMetadata({ params }: Props): Metadata {
       authors: "ridhozhr10.github.io",
       publishedTime: post.created_at,
       modifiedTime: post.updated_at,
+    },
+    twitter: {
+      card: "summary",
+      title,
+      images: [post.ogImage.url],
     },
   };
 }
