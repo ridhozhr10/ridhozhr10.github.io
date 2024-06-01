@@ -11,14 +11,14 @@ self proclaimed friendly person (trust me),
 black coffee enjoyer`;
 export const baseMetadata = (path: string, titlePrefix?: string): Metadata => {
   return {
-    metadataBase: new URL(`${baseURL}${path ? "/" : ""}${path}`),
+    metadataBase: new URL(`${baseURL}`),
     title: `${titlePrefix || ""}${titlePrefix ? " :: " : ""}${title}`,
     description,
     openGraph: {
       title: `${titlePrefix || ""}${titlePrefix ? " :: " : ""}${title}`,
-      url: `${baseURL}${path ? "/" : ""}${path}`,
+      url: `${path ? "/" : ""}${path}`,
       description: description,
-      images: `${baseURL}/img/smug-ico.png`,
+      images: `/img/smug-ico.png`,
       type: "website",
     },
   };

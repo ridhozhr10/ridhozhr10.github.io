@@ -5,6 +5,7 @@ import dayjs from "dayjs";
 import "@/app/posts/style.scss";
 import { Metadata } from "next";
 import { BiTagAlt } from "react-icons/bi";
+import { baseURL } from "@/constants";
 
 type Props = {
   params: {
@@ -59,8 +60,15 @@ export function generateMetadata({ params }: Props): Metadata {
   const title = `#${params.tag} :: Ridho Azhar`;
 
   return {
+    metadataBase: new URL(baseURL),
     title,
     robots: { follow: true, index: true },
+    openGraph: {
+      title: `title`,
+      url: `/tags/${params.tag}`,
+      images: `/img/smug-ico.png`,
+      type: "website",
+    },
   };
 }
 export function generateStaticParams() {

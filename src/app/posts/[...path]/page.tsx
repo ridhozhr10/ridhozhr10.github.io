@@ -91,6 +91,14 @@ export function generateMetadata({ params }: Props): Metadata {
     }
     return {
       title: `${params.path.join("/")} Posts :: Ridho Azhar`,
+      metadataBase: new URL(baseURL),
+      robots: { follow: true, index: true },
+      openGraph: {
+        url: `/posts/${params.path.join("/")}`,
+        title: `${params.path.join("/")} Posts :: Ridho Azhar`,
+        images: `/img/smug-ico.png`,
+        type: "website",
+      },
     };
   }
 
@@ -100,7 +108,7 @@ export function generateMetadata({ params }: Props): Metadata {
   const post = data.post;
   const title = `${post.title} :: Ridho Azhar`;
   return {
-    metadataBase: new URL(`${baseURL}/posts/${post.path.join("/")}`),
+    metadataBase: new URL(baseURL),
     title,
     description: post.description,
     robots: { follow: true, index: true },
@@ -108,7 +116,7 @@ export function generateMetadata({ params }: Props): Metadata {
       title,
       url: `${baseURL}/posts/${post.path.join("/")}`,
       description: post.description,
-      images: [`${baseURL}${post.ogImage.url}`],
+      images: [post.ogImage.url],
       type: "article",
       authors: "ridhozhr10.github.io",
       publishedTime: post.created_at,
