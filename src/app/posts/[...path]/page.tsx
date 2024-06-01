@@ -100,6 +100,7 @@ export function generateMetadata({ params }: Props): Metadata {
   const post = data.post;
   const title = `${post.title} :: Ridho Azhar`;
   return {
+    metadataBase: new URL(`${baseURL}/posts/${post.path.join("/")}`),
     title,
     description: post.description,
     robots: { follow: true, index: true },

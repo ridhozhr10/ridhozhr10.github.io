@@ -11,6 +11,7 @@ self proclaimed friendly person (trust me),
 black coffee enjoyer`;
 export const baseMetadata = (path: string, titlePrefix?: string): Metadata => {
   return {
+    metadataBase: new URL(`${baseURL}${path ? "/" : ""}${path}`),
     title: `${titlePrefix || ""}${titlePrefix ? " :: " : ""}${title}`,
     description,
     openGraph: {

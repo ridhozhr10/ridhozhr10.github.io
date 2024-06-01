@@ -1,6 +1,4 @@
 ---
-title: "About :: Ridho Azhar"
-description: "Meet Ridho Azhar, a versatile software engineer passionate about creating seamless user experiences. From childhood puzzle boards to diving into web development and infrastructure technologies, Ridho thrives on solving puzzles and pushing the boundaries of software engineering. Join him on his journey of lifelong learning and problem-solving. Let's connect and solve some puzzles together!"
 ---
 
 ![ridho](/img/me.jpg){style="float:right;max-width:200px;margin:25px 10px;"}

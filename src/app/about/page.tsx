@@ -4,21 +4,9 @@ import BaseLayout from "@/app/_components/layout/BaseLayout";
 import mdToHtml from "@/lib/markdown";
 import Markdown from "@/app/_components/Markdown";
 import { BiEnvelope, BiLogoGithub, BiLogoLinkedinSquare } from "react-icons/bi";
-import { baseURL } from "@/constants";
+import { baseMetadata } from "@/constants";
 
-const { title, description } = getAboutContent();
-
-export const metadata: Metadata = {
-  title,
-  description,
-  openGraph: {
-    title,
-    description,
-    url: `${baseURL}/about`,
-    images: ["/img/smug-ico.png"],
-    type: "website",
-  },
-};
+export const metadata: Metadata = baseMetadata("about", "About");
 
 export default async function About() {
   const { content } = getAboutContent();
