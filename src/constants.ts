@@ -18,7 +18,7 @@ export const baseMetadata = (path: string, titlePrefix?: string): Metadata => {
       title: `${titlePrefix || ""}${titlePrefix ? " :: " : ""}${title}`,
       url: `${baseURL}${path ? "/" : ""}${path}`,
       description: description,
-      images: ["/img/smug-ico.png"],
+      images: `${baseURL}/img/smug-ico.png`,
       type: "website",
     },
   };
