@@ -20,7 +20,7 @@ import {
   generateTwitterShare,
 } from "@/lib/share";
 import { Post } from "@/interfaces/post";
-import { useRef, useState } from "react";
+import { Fragment, useRef, useState } from "react";
 import { SinglePagination } from "@/lib/api";
 import Comment from "./Comment";
 import dayjs from "dayjs";
@@ -76,7 +76,7 @@ export default function BlogPost({
             </li>
             {shareLinks.map((d, i) => (
               <li
-                key={`share_i_${i}`}
+                key={`share_i_${d.href}_${i}`}
                 className={!shareOpen ? "max-lg:hidden" : ""}
               >
                 <a href={d.href} title={d.title} target="_blank" rel="noopener">
@@ -111,7 +111,7 @@ export default function BlogPost({
           <p>
             <BiTagAlt className="feather" />
             {post.tags.map((tag) => (
-              <span className="tag" key={tag}>
+              <span className="tag" key={post.title + tag}>
                 <Link href={`/tags/${tag}`}>{tag}</Link>
               </span>
             ))}
@@ -123,10 +123,10 @@ export default function BlogPost({
             {post.path.map((p, i) => {
               const slug = post.path.filter((_, is) => is <= i).join("/");
               return (
-                <>
+                <Fragment key={`path_post_${post.title}_${i}`}>
                   <Link href={`/posts/${slug}`}>{p}</Link>
                   {i < post.path.length - 1 ? "/" : ""}
-                </>
+                </Fragment>
               );
             })}
           </span>

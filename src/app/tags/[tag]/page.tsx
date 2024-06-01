@@ -4,6 +4,7 @@ import Link from "next/link";
 import dayjs from "dayjs";
 import "@/app/posts/style.scss";
 import { Metadata } from "next";
+import { BiTagAlt } from "react-icons/bi";
 
 type Props = {
   params: {
@@ -17,7 +18,7 @@ export default function Tag({ params }: Props) {
   return (
     <BaseLayout logoText={`ls $POSTS_DIR | grep ${params.tag}`}>
       <main className="post">
-        <h1 className="text-5xl font-bold my-6">{params.tag}</h1>
+        <h1 className="text-5xl font-bold my-6">#{params.tag}</h1>
         {postGroups.map((postGroup) => (
           <div key={postGroup.year} className="posts-group">
             <div className="post-year">{postGroup.year}</div>
@@ -33,6 +34,18 @@ export default function Tag({ params }: Props) {
                       {dayjs(post.date).format("MMM DD")}
                     </span>
                   </Link>
+                  <div className="flex items-center mb-[5px]">
+                    <BiTagAlt className="mr-2" />
+                    {post.tags.map((tag) => (
+                      <Link
+                        key={post.title + tag}
+                        href={`/tags/${tag}`}
+                        className="p-1 bg-header-bg-dark bg-opacity-50 mr-2 rounded-md hover:bg-opacity-100"
+                      >
+                        {tag}
+                      </Link>
+                    ))}
+                  </div>
                 </li>
               ))}
             </ul>

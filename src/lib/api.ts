@@ -131,6 +131,7 @@ type PostGroup = {
     slug: string;
     title: string;
     date: Date;
+    tags: string[];
   }[];
 };
 
@@ -147,6 +148,7 @@ export function getPostGroupByYear(tag?: string): PostGroup[] {
       slug: post.path.join("/"),
       title: post.title,
       date: new Date(post.created_at),
+      tags: post.tags,
     };
 
     if (idxResult < 0) {

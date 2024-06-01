@@ -4,6 +4,7 @@ import Link from "next/link";
 import dayjs from "dayjs";
 import "./style.scss";
 import { baseMetadata } from "@/constants";
+import { BiTagAlt } from "react-icons/bi";
 
 export const metadata = baseMetadata("posts", "Posts");
 
@@ -29,6 +30,18 @@ export default function Posts() {
                       {dayjs(post.date).format("MMM DD")}
                     </span>
                   </Link>
+                  <div className="flex items-center mb-[5px]">
+                    <BiTagAlt className="mr-2" />
+                    {post.tags.map((tag) => (
+                      <Link
+                        key={post.title + tag}
+                        href={`/tags/${tag}`}
+                        className="p-1 bg-header-bg-dark bg-opacity-50 mr-2 rounded-md hover:bg-opacity-100"
+                      >
+                        {tag}
+                      </Link>
+                    ))}
+                  </div>
                 </li>
               ))}
             </ul>

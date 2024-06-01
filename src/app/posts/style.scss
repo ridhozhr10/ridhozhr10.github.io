@@ -16,10 +16,10 @@
       border-bottom: 1px grey dashed;
 
       .post-item-inner {
-        @apply flex justify-between align-baseline py-[12px] px-0;
+        @apply flex justify-between align-baseline pt-[12px] px-0;
 
         .post-title {
-          @apply mb-[5px];
+          @apply mb-[5px] leading-5;
         }
 
         .post-day {

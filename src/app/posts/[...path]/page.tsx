@@ -12,6 +12,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import "@/app/posts/style.scss";
+import { BiTagAlt } from "react-icons/bi";
 
 type Props = {
   params: { path: string[] };
@@ -42,6 +43,18 @@ export default async function Post({ params }: Props) {
                       {dayjs(post.created_at).format("MMM DD, YYYY")}
                     </span>
                   </Link>
+                  <div className="flex items-center mb-[5px]">
+                    <BiTagAlt className="mr-2" />
+                    {post.tags.map((tag) => (
+                      <Link
+                        key={post.title + tag}
+                        href={`/tags/${tag}`}
+                        className="p-1 bg-header-bg-dark bg-opacity-50 mr-2 rounded-md hover:bg-opacity-100"
+                      >
+                        {tag}
+                      </Link>
+                    ))}
+                  </div>
                 </li>
               ))}
             </ul>
