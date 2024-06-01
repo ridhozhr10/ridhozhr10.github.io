@@ -108,7 +108,7 @@ export function generateMetadata({ params }: Props): Metadata {
       title,
       url: `${baseURL}/posts/${post.path.join("/")}`,
       description: post.description,
-      images: [post.ogImage.url],
+      images: [`${baseURL}${post.ogImage.url}`],
       type: "article",
       authors: "ridhozhr10.github.io",
       publishedTime: post.created_at,
