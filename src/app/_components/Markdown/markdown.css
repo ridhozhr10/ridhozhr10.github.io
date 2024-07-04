@@ -13,6 +13,11 @@
   word-wrap: break-word;
 }
 
+iframe {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
 .markdown-body .octicon {
   display: inline-block;
   fill: currentColor;
