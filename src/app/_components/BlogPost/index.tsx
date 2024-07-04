@@ -28,12 +28,14 @@ import Markdown from "../Markdown";
 
 export type BlogPostProps = Post & {
   content: string;
+  isPreview: boolean;
   pagination: SinglePagination;
 };
 
 export default function BlogPost({
   content,
   pagination,
+  isPreview,
   ...post
 }: BlogPostProps) {
   const shareLinks = [
@@ -88,7 +90,7 @@ export default function BlogPost({
         </div>
         <h1 className="text-4xl mb-5 mt-12 font-bold">
           <Link href="" className="no-underline">
-            {post.title}
+            {isPreview ? "PREVIEW: " :""}{post.title}
           </Link>
         </h1>
         {post.excerpt && <div className="post-excerpt">{post.excerpt}</div>}

@@ -74,7 +74,7 @@ export default async function Post({ params }: Props) {
   return (
     <BaseLayout logoText="cat ./content.txt | less ">
       <main className="post">
-        <BlogPost {...post} content={content} pagination={pagination} />
+        <BlogPost {...post} content={content} pagination={pagination} isPreview={post.preview} />
       </main>
     </BaseLayout>
   );

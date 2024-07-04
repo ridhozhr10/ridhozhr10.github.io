@@ -97,7 +97,7 @@ export type SinglePagination = { prev?: Post; next?: Post };
 export function getNextPreviousPost(post: Post): SinglePagination {
   const result: SinglePagination = {};
 
-  const allPost = getAllPosts();
+  const allPost = getAllPosts(false);
   const idxCurrent = allPost
     .map((d) => d.path.join("/"))
     .findIndex((d) => d === post.path.join("/"));

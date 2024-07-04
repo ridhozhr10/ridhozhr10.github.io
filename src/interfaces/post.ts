@@ -1,5 +1,5 @@
 export type Post = {
-  preview?: boolean;
+  preview: boolean;
   path: string[];
 
   created_at: string;
