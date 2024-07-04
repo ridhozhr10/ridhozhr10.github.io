@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import NextTopLoader from "nextjs-toploader";
 import localFont from "next/font/local";
 import "./globals.css";
+import Script from "next/script";
 
 const inter = localFont({
   src: [
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans`}>
         <NextTopLoader color="#a9a9b3" showSpinner={false} />
         {children}
+        <Script async defer src="https://scripts.simpleanalyticscdn.com/latest.js" />
       </body>
     </html>
   );
