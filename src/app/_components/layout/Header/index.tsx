@@ -7,7 +7,7 @@ import style from "./style.module.scss";
 
 const menuList = [
   { label: "About", href: "/about" },
-  { label: "CV", href: "/cv" },
+  // { label: "CV", href: "/cv" },
   // { label: "Projects", href: "/projects" },
   { label: "Posts", href: "/posts" },
 ];
