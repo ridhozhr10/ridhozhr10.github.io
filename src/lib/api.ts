@@ -68,7 +68,7 @@ export function getPostOrDirBySlug(slug: string): PostOrDir {
     if (lstatSync(fullPath).isDirectory()) {
       return {
         type: "dir",
-        dir: getAllPosts().filter((d) => {
+        dir: getAllPosts(false).filter((d) => {
           const split = slug.split("/");
           let res = true;
           for (let i = 0; i < split.length; i++) {
@@ -112,7 +112,7 @@ export function getNextPreviousPost(post: Post): SinglePagination {
   return result;
 }
 
-export function getAllPosts(): Post[] {
+export function getAllPosts(includePreview = true): Post[] {
   const slugs = getPostSlugs();
   const postList: SinglePost[] = slugs
     .map((slug) => getPostOrDirBySlug(slug))
@@ -122,6 +122,9 @@ export function getAllPosts(): Post[] {
     .sort((a, b) => {
       return a.path.join("/") > b.path.join("/") ? -1 : 1;
     });
+  if (!includePreview) {
+    return posts.filter(d => !d.preview)
+  }
   return posts;
 }
 
@@ -137,7 +140,7 @@ type PostGroup = {
 
 export function getPostGroupByYear(tag?: string): PostGroup[] {
   const result: PostGroup[] = [];
-  getAllPosts().forEach((post) => {
+  getAllPosts(false).forEach((post) => {
     // filter
     if (tag && !post.tags.includes(tag)) {
       return;
