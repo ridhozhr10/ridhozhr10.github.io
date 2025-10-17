@@ -21,7 +21,7 @@ ogImage:
 
 # First of all
 
-The first post i write in this site is this one [Tackling the Content Conundrum: My Journey from Code to Copywriting](https://ridhozhr10.github.io/posts/2024/05/29/my-journey-from-code-to-copy) and i kinda apoligize for that. To summarize it for you since you are im, all i say was how hard it is for me to write some content and solving it with the power of muh AI ✨.
+The first post i write in this site is this one [Tackling the Content Conundrum: My Journey from Code to Copywriting](https://ridhozhr10.github.io/posts/2024/05/29/my-journey-from-code-to-copy) and i kinda apoligize for that. To summarize it for you, all i say was how hard it is for me to write some content and solving it with the power of muh AI ✨.
 
 So, maybe you may ask (or not, i do care but still, you do you)
 
