@@ -7,6 +7,7 @@ excerpt: "Licking my own saliva for saying you should doing content with AI"
 tags:
   - blog
   - personal
+  - english-lang
 description: "Droping AI and make sure my site remain organic"
 coverImage:
   src: "/img/posts/lick-da-lick.jpeg"

@@ -6,6 +6,7 @@ title: "Tackling the Content Conundrum: My Journey from Code to Copywriting"
 excerpt: "Building my portfolio site was a breeze—CSS, JavaScript, nailed it. But creating content? That's where things got tricky. Enter ChatGPT, my (not so secret) weapon with a bigger vocabulary than all the books I've ever read combined. "
 tags:
   - writing
+  - english-lang
   - AI
 description: "Building my portfolio site was a breeze—CSS, JavaScript, nailed it. But creating content? That's where things got tricky. Enter ChatGPT, my (not so secret) weapon with a bigger vocabulary than all the books I've ever read combined. "
 coverImage:
